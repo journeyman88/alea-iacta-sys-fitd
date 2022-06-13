@@ -7,7 +7,7 @@
         <version>2.0.0</version>
     </parent>
     <artifactId>alea-iacta-sys-fitd</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     
     <name>Alea Iacta Est - System: Forged in the Dark</name>
@@ -26,7 +26,7 @@
         <connection>scm:git:git://github.com/journeyman88/alea-iacta-sys-fitd</connection>
         <developerConnection>scm:git:ssh://git@github.com/journeyman88/alea-iacta-sys-fitd</developerConnection>
         <url>https://github.com/journeyman88/alea-iacta-sys-fitd</url>
-        <tag>2.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
     
     <dependencies>
