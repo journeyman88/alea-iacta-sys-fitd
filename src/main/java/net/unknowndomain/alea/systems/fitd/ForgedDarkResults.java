@@ -32,6 +32,8 @@ public class ForgedDarkResults extends LocalizedResult
     
     private final List<SingleResult<Integer>> results;
     private int successLevel = 0;
+    private int chosen = 0;
+    private boolean numeric = false;
     
     public ForgedDarkResults(List<SingleResult<Integer>> results)
     {
@@ -48,7 +50,14 @@ public class ForgedDarkResults extends LocalizedResult
     @Override
     protected void formatResults(MsgBuilder messageBuilder, boolean verbose, int indentValue)
     {
-        messageBuilder.append(translate("fitd.results.successLevel."+successLevel)).appendNewLine();
+        if (numeric)
+        {
+            messageBuilder.append(translate("fitd.results.numRes",chosen)).appendNewLine();
+        }
+        else
+        {
+            messageBuilder.append(translate("fitd.results.successLevel."+successLevel)).appendNewLine();
+        }
         if (verbose)
         {
             messageBuilder.append("Roll ID: ").append(getUuid()).appendNewLine();
@@ -76,6 +85,26 @@ public class ForgedDarkResults extends LocalizedResult
     public void setSuccessLevel(int successLevel)
     {
         this.successLevel = successLevel;
+    }
+
+    public boolean isNumeric()
+    {
+        return numeric;
+    }
+
+    public void setNumeric(boolean numeric)
+    {
+        this.numeric = numeric;
+    }
+
+    public int getChosen()
+    {
+        return chosen;
+    }
+
+    public void setChosen(int chosen)
+    {
+        this.chosen = chosen;
     }
     
 }

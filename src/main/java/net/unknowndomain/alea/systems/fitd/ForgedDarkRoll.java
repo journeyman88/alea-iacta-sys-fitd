@@ -76,6 +76,7 @@ public class ForgedDarkRoll implements GenericRoll
         List<SingleResult<Integer>> res = new ArrayList<>(resultsPool.size());
         res.addAll(resultsPool);
         ForgedDarkResults results = buildResults(res);
+        results.setNumeric(mods.contains(ForgedDarkModifiers.NUMERIC));
         results.setVerbose(mods.contains(ForgedDarkModifiers.VERBOSE));
         results.setLang(lang);
         return results;
@@ -91,6 +92,7 @@ public class ForgedDarkRoll implements GenericRoll
         {
             pivotResult = res.get(res.size()-1);
         }
+        results.setChosen(pivotResult.getValue());
         if (pivotResult.getValue() >= 6)
         {
             results.setSuccessLevel(2);

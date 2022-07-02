@@ -22,5 +22,6 @@ package net.unknowndomain.alea.systems.fitd;
 public enum ForgedDarkModifiers
 {
     VERBOSE,
-    DESPERATE
+    DESPERATE,
+    NUMERIC
 }

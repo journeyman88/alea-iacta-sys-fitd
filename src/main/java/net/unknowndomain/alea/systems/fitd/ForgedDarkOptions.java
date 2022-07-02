@@ -32,6 +32,8 @@ public class ForgedDarkOptions extends RpgSystemOptions
 {
     @RpgSystemOption(name = "dice", shortcode = "d", description = "fitd.options.dice", argName = "numberOfDice")
     private Integer diceNumber;
+    @RpgSystemOption(name = "numeric", shortcode = "n", description = "fitd.options.numeric", argName = "numericResult")
+    private boolean numericResult;
             
                         
     @Override
@@ -54,7 +56,16 @@ public class ForgedDarkOptions extends RpgSystemOptions
         {
             mods.add(ForgedDarkModifiers.VERBOSE);
         }
+        if (isNumericResult())
+        {
+            mods.add(ForgedDarkModifiers.NUMERIC);
+        }
         return mods;
+    }
+
+    public boolean isNumericResult()
+    {
+        return numericResult;
     }
     
 }
