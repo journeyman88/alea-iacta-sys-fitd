@@ -21,19 +21,21 @@ import java.util.List;
 import net.unknowndomain.alea.messages.MsgBuilder;
 import net.unknowndomain.alea.random.SingleResult;
 import net.unknowndomain.alea.roll.LocalizedResult;
+import net.unknowndomain.alea.systems.annotations.RpgSystemResult;
 
 /**
  *
  * @author journeyman
  */
+@RpgSystemResult(typeId = "fitd")
 public class ForgedDarkResults extends LocalizedResult
 {
     private final static String BUNDLE_NAME = "net.unknowndomain.alea.systems.fitd.RpgSystemBundle";
-    
-    private final List<SingleResult<Integer>> results;
-    private int successLevel = 0;
-    private int chosen = 0;
-    private boolean numeric = false;
+
+    final List<SingleResult<Integer>> results;
+    int successLevel = 0;
+    int chosen = 0;
+    boolean numeric = false;
     
     public ForgedDarkResults(List<SingleResult<Integer>> results)
     {
@@ -64,8 +66,8 @@ public class ForgedDarkResults extends LocalizedResult
             messageBuilder.append(translate("fitd.results.diceResults")).append(" [ ");
             for (SingleResult<Integer> t : getResults())
             {
-                messageBuilder.append("( ").append(t.getLabel()).append(" => ");
-                messageBuilder.append(t.getValue()).append(") ");
+                messageBuilder.append("( ").append(t.label()).append(" => ");
+                messageBuilder.append(t.value()).append(") ");
             }
             messageBuilder.append("]").appendNewLine();
         }
@@ -106,5 +108,10 @@ public class ForgedDarkResults extends LocalizedResult
     {
         this.chosen = chosen;
     }
-    
+
+    void restoreUuid(String uuid)
+    {
+        setUuid(uuid);
+    }
+
 }

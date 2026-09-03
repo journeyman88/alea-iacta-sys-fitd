@@ -31,9 +31,9 @@ import net.unknowndomain.alea.systems.annotations.RpgSystemOption;
 public class ForgedDarkOptions extends RpgSystemOptions
 {
     @RpgSystemOption(name = "dice", shortcode = "d", description = "fitd.options.dice", argName = "numberOfDice")
-    private Integer diceNumber;
+    Integer diceNumber;
     @RpgSystemOption(name = "numeric", shortcode = "n", description = "fitd.options.numeric", argName = "numericResult")
-    private boolean numericResult;
+    boolean numericResult;
             
                         
     @Override

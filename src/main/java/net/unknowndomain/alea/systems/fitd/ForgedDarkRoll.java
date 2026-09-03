@@ -92,12 +92,12 @@ public class ForgedDarkRoll implements GenericRoll
         {
             pivotResult = res.get(res.size()-1);
         }
-        results.setChosen(pivotResult.getValue());
-        if (pivotResult.getValue() >= 6)
+        results.setChosen(pivotResult.value());
+        if (pivotResult.value() >= 6)
         {
             results.setSuccessLevel(2);
         }
-        else if (pivotResult.getValue() >= 4)
+        else if (pivotResult.value() >= 4)
         {
             results.setSuccessLevel(1);
         }
@@ -108,7 +108,7 @@ public class ForgedDarkRoll implements GenericRoll
         if ((res.size() > 1) && !mods.contains(ForgedDarkModifiers.DESPERATE))
         {
             SingleResult<Integer> secondBest = res.get(1);
-            if (secondBest.getValue() == 6)
+            if (secondBest.value() == 6)
             {
                 results.setSuccessLevel(3);
             }

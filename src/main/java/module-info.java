@@ -20,4 +20,5 @@ module net.unknowndomain.alea.systems.fitd {
     requires static lombok;
     opens net.unknowndomain.alea.systems.fitd to net.unknowndomain.alea.core;
     provides net.unknowndomain.alea.systems.RpgSystemCommand with net.unknowndomain.alea.systems.fitd.ForgedDarkCommand;
+    provides net.unknowndomain.alea.systems.results.ResultCodec with net.unknowndomain.alea.systems.fitd.ForgedDarkResultsCodec;
 }
